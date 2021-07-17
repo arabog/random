@@ -15,13 +15,23 @@ function countAnimals(animals,count){
                               .match(new RegExp(animal, "g")) || []).length);
 }
 
-// const countAnimals = 
-//           (animals, count) => count.map(x => animals.split(x).length - 1);
+const countAnimals = 
+          (animals, count) => count
+                    .map(x => animals
+                                        .split(x).length - 1);
 
 function countAnimals(animals, count) {
           return count
-                              .map(x => animals.split(x).length - 1);
+                              .map(x => animals
+                                                  .split(x).length - 1);
 }
+
+countAnimals = 
+          (animals, count) => count
+                                        .map( val => animals
+                                                                      .split(',')
+                                                                      .filter( x => x == val).length );
+
 
 console.log( countAnimals("dog, cat", ["dog", "cat"]));
 console.log( countAnimals("dog, cat", ["dog", "cat","pig"]));
